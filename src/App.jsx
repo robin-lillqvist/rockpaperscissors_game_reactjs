@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
-import Selection from './components/showSelections';
-import "./App.css";
+import React, { Component } from 'react'
+import Selection from './components/showSelections'
+import Header from './components/Header'
+import './App.css'
+import Opponent from './components/Opponent';
 
 class App extends Component {
+  
+  state = {
+    backgroundImage: "url('./img/rock.png')"
+  };
 
-  render() {
+  render () {
     return (
-      <div>
-          <Selection/>
-      </div>
+
+        <div>
+          <Header />
+          <Opponent />
+          <Selection />
+        </div>
     )
   }
 }
 
-export default App;
+export default App
