@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class Header extends Component {
   render() {
     return (
-      <div id="header">
-        <h1>Rock Paper Scissor</h1>
+      <div className='ui very padded text container'>
+        <h1>Rock, Paper, Scissors!</h1>
       </div>
     )
   }
