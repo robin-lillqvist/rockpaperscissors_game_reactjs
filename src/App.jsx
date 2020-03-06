@@ -22,9 +22,7 @@ class App extends Component {
         weaponChoices[Math.floor(Math.random() * weaponChoices.length)]
     })
     let results = doBattle(this.state.playerChoice, this.state.opponentChoice)
-    this.setState({
-      result: results
-    })
+    this.setState({ result: results })
     if (results === 'wisely') {
       let new_combo = this.state.combo
       new_combo++
@@ -35,15 +33,14 @@ class App extends Component {
   }
 
   render () {
-    const { playerChoice } = this.state
     let displayResults
 
-    if (playerChoice) {
+    if (this.state.playerChoice) {
       displayResults = (
         <ShowResults
           playerChoice={this.state.playerChoice}
           opponentChoice={this.state.opponentChoice}
-          result={doBattle(this.state.playerChoice, this.state.opponentChoice)}
+          result={this.state.result}
         />
       )
     } else {
@@ -55,11 +52,6 @@ class App extends Component {
         <Header />
         <ShowCombo combo={this.state.combo} />
         {displayResults}
-        {/* <ShowResults
-          playerChoice={this.state.playerChoice}
-          opponentChoice={this.state.opponentChoice}
-          result={doBattle(this.state.playerChoice, this.state.opponentChoice)}
-        /> */}
         <div className='ui very padded text container'>
           <div class='button-container'>
             <button
