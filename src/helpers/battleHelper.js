@@ -1,11 +1,4 @@
 export const doBattle = (playerSelection, computerSelection) => {
-  console.log(
-    "playerSelection: " +
-      playerSelection +
-      ", computerSelection: " +
-      computerSelection
-  );
-
   let result = "";
 
   if (
