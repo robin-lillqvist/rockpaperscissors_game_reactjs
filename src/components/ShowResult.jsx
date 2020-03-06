@@ -16,7 +16,7 @@ const ShowResults = props => {
 
           <div class='computer'>
             <div class='ui teal pointing below label'>Opponent</div>
-            <div className='computerChoice'>{props.opponentChoice}</div>
+            <div className='opponentChoice'>{props.opponentChoice}</div>
           </div>
         </div>
 

@@ -5,6 +5,7 @@ describe('User open page to see the three selections', () => {
 
   it('can see the Title', () => {
     cy.get('h1').should('contain', 'Rock, Paper, Scissors!')
+    cy.get('h2').should('contain', 'Choose Wisely')
       })
 
   it('can see three selections', () => {
