@@ -59,5 +59,5 @@ To know that I can get a combo
 I would like there to be a visual indication on the page after having won one game
 
 
-# things to look into
-- For Animations https://www.npmjs.com/package/react-animations
+# Deployed at
+https://reactjs-rockpaperscissors.netlify.com/
