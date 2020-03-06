@@ -16,50 +16,52 @@ class App extends Component {
   }
 
   playRound (event) {
-    this.setState({
-      playerChoice: event.target.value,
-      opponentChoice:
-        weaponChoices[Math.floor(Math.random() * weaponChoices.length)]
-    })
-    let results = doBattle(this.state.playerChoice, this.state.opponentChoice)
-    this.setState({
-      result: results
-    })
+    let player = event.target.value
+    let opponent =
+      weaponChoices[Math.floor(Math.random() * weaponChoices.length)]
+    let results = doBattle(player, opponent)
+    let combo = this.state.combo
+
     if (results === 'wisely') {
-      let new_combo = this.state.combo
-      new_combo++
-      this.setState({ combo: new_combo })
+      combo++
     } else {
-      this.setState({ combo: 0 })
+      combo = 0
     }
+    this.setState({
+      playerChoice: player,
+      opponentChoice: opponent,
+      result: results,
+      combo: combo
+    })
   }
 
   render () {
-    const { playerChoice } = this.state
-    let displayResults
+    let renderResults
 
-    if (playerChoice) {
-      displayResults = (
-        <ShowResults
-          playerChoice={this.state.playerChoice}
-          opponentChoice={this.state.opponentChoice}
-          result={doBattle(this.state.playerChoice, this.state.opponentChoice)}
-        />
+    if (this.state.result !== '') {
+      renderResults = (
+        <>
+          <ShowResults
+            playerChoice={this.state.playerChoice}
+            opponentChoice={this.state.opponentChoice}
+            result={this.state.result}
+          />
+        </>
       )
     } else {
-      displayResults = (<div className='ui very padded text container'><h2 className="equally">Choose Wisely</h2></div>)
+      renderResults = (
+        <div className='ui very padded text container'>
+          <h2 className='equally'>Choose Wisely</h2>
+        </div>
+      )
     }
 
     return (
       <>
         <Header />
         <ShowCombo combo={this.state.combo} />
-        {displayResults}
-        {/* <ShowResults
-          playerChoice={this.state.playerChoice}
-          opponentChoice={this.state.opponentChoice}
-          result={doBattle(this.state.playerChoice, this.state.opponentChoice)}
-        /> */}
+        {renderResults}
+
         <div className='ui very padded text container'>
           <div class='button-container'>
             <button
