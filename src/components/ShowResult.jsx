@@ -20,7 +20,7 @@ const ShowResults = props => {
           </div>
         </div>
 
-        <div id="results" className={'results ' +props.result}>You choose {props.result}!</div>
+        <div id="results" className={'results ' +props.result}>You chose {props.result}!</div>
       </>
     )
   }

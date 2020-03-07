@@ -51,7 +51,7 @@ class App extends Component {
     } else {
       renderResults = (
         <div className='ui very padded text container'>
-          <h2 className='equally'>Choose Wisely</h2>
+          <h2 className='equally'>Choose wisely</h2>
         </div>
       )
     }

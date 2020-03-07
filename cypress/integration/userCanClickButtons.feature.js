@@ -8,18 +8,18 @@ describe('User open page to see the three selections', () => {
       cy.get('.player').within(() => {
       cy.get('.playerChoice').should('contain', 'Rock')
       })
-      cy.get('#results').contains('You choose')
+      cy.get('#results').contains('You chose')
   
       cy.get('#paper').click()
       cy.get('.player').within(() => {
       cy.get('.playerChoice').should('contain', 'Paper')
       })
-      cy.get('#results').contains('You choose')
+      cy.get('#results').contains('You chose')
   
       cy.get('#scissors').click()
       cy.get('.player').within(() => {
       cy.get('.playerChoice').should('contain', 'Scissors')
       })
-      cy.get('#results').contains('You choose')
+      cy.get('#results').contains('You chose')
     })
   });
