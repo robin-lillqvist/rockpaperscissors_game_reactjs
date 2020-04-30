@@ -1,4 +1,5 @@
 # rockpaperscissors
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cf6a73c8-2d12-496d-b13b-feae464b1f04/deploy-status)](https://app.netlify.com/sites/reactjs-rockpaperscissors/deploys)
 
 ### Classic game of Rock Paper Scissors. 
 Rock beats Scissors
